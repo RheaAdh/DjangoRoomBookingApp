@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    <div style="margin: 2rem;">
+        <h1>Welcome {{request.user}}</h1>
+    {% if user.is_superuser %}
+        <p><a href={% url 'index' %}>Check all Bookings</a></p>
+    {% else %}
+        <p>Out Time: {{ booking_details.out_time }}</p>
+        <p>Dues: {{ booking_details.dues }}</p>
+        <p>Advance: {{ booking_details.advance }}</p>
+
+    {% endif %}
+
+    <p><a href={% url 'logout' %}>Logout</a></p>
+    </div>
+    
+{% endblock %}

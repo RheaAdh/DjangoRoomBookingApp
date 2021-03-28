@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <th>Name</th>
+        <th>in time</th>
+        <th>out time</th>
+        <th>request made on</th>
+        <th>Occupancy</th>
+        {% for booking in bookings%}
+        <tr>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.in_time }}</td>
+            <td>{{ booking.out_time }}</td>
+            <td>{{ booking.date_of_booking }}</td>
+            <td>{{ booking.occupancy }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+<div style="margin: 2rem;">
+    <h1>Login</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>Userame <br><input type="text" name="username" placeholder="Name"></p>
+        <p>Password<br><input type="password" name="password" placeholder="Password"></p>
+        <input type="submit" value="Log in">
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+    </form>
+    <p>New User?<a href={% url 'register' %}><br>Click here</a></p>
+</div>
+    
+{% endblock %}
