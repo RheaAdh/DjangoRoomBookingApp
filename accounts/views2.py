@@ -3,14 +3,14 @@ from .forms import CreateUser
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+# from .models import BookingList,AdminEditList
 # Create your views here.
 
 @login_required(login_url='login')
 def dashboard(request):
     user=request.user
-    booking_details=user.bookinglist_set.all()
-    return render(request,'accounts/dashboard.html',{'booking_details':booking_details})
+    userbalance=user.admineditlist_set.all()
+    return render(request,'accounts/dashboard.html',{"userbalance":userbalance})
 
 def register(request):
     if request.method=="POST":

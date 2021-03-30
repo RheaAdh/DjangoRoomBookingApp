@@ -5,11 +5,9 @@
         <h1>Welcome {{request.user}}</h1>
     {% if user.is_superuser %}
         <p><a href={% url 'index' %}>Check all Bookings</a></p>
+        <p><a href={% url 'edit' %}>Edit Bookings</a></p>
     {% else %}
-        <p>Out Time: {{ booking_details.out_time }}</p>
-        <p>Dues: {{ booking_details.dues }}</p>
-        <p>Advance: {{ booking_details.advance }}</p>
-
+        Dues:<p>{{request.user.admineditlist_Set.all}}</p>
     {% endif %}
 
     <p><a href={% url 'logout' %}>Logout</a></p>

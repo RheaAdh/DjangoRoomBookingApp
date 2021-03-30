@@ -24,6 +24,7 @@ urlpatterns = [
     path('features',views.featurespage,name="features"),
     path('index',views.index,name="index"),
     path('book',views.book,name="book"),
+    path('edit',views.edit,name="edit"),
     path('dashboard',views2.dashboard,name="dashboard"),
     path('register',views2.register,name="register"),
     path('login',views2.login,name="login"),
