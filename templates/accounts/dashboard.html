@@ -7,7 +7,9 @@
         <p><a href={% url 'index' %}>Check all Bookings</a></p>
         <p><a href={% url 'edit' %}>Edit Bookings</a></p>
     {% else %}
-        Dues:<p>{{request.user.admineditlist_Set.all}}</p>
+        {% for x in admineditlist %}
+            Dues:<p>{{x.dues}}</p>
+        {% endfor %}
     {% endif %}
 
     <p><a href={% url 'logout' %}>Logout</a></p>

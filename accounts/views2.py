@@ -9,8 +9,8 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='login')
 def dashboard(request):
     user=request.user
-    userbalance=user.admineditlist_set.all()
-    return render(request,'accounts/dashboard.html',{"userbalance":userbalance})
+    admineditlist=user.admineditlist_set.all()
+    return render(request,'accounts/dashboard.html',{'admineditlist':admineditlist})
 
 def register(request):
     if request.method=="POST":
